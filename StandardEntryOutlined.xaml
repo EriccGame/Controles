@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MaxilanaVales.Controles.StandardEntryOutlined"
+             xmlns:Controles="clr-namespace:MaxilanaVales.Controles"
+             x:Name="this">
+    <ContentView.Content>
+        <StackLayout>
+            <Grid>
+                <Controles:StandardEntry x:Name="TextBox"
+                                         VerticalOptions="FillAndExpand"
+                                         Focused="TextBox_Focused" 
+                                         Unfocused="TextBox_Unfocused"
+                                         TextChanged="OnTextChanged"
+                                         HeightRequest="40"
+                                         Text="{Binding Text,Source={x:Reference this},Mode=TwoWay}"
+                                         Keyboard="{Binding Keyboard, Source={x:Reference this}}"
+                                         FontFamily="{Binding FontFamily, Source={x:Reference this}}"
+                                         FontSize="{Binding FontSize, Source={x:Reference this}}"
+                                         TextColor="{Binding TextColor, Source={x:Reference this}}"
+                                         BackgroundColor="{Binding BackgroundColorEntry, Source={x:Reference this}}"
+                                         BorderThickness="{Binding BorderThickness, Source={x:Reference this}}"
+                                         CornerRadius="{Binding CornerRadius, Source={x:Reference this}}"
+                                         BorderColor="{Binding BorderColor, Source={x:Reference this}}"
+                                         MaxLength="{Binding MaxLength, Source={x:Reference this}}"
+                                         Padding="{Binding PaddingEntry, Source={x:Reference this}}"
+                                         IsReadOnly="{Binding IsReadOnly, Source={x:Reference this}}"
+                                         IsPassword="{Binding IsPassword, Source={x:Reference this}}">
+                </Controles:StandardEntry>
+
+                <Label x:Name="PlaceHolderLabel"
+                       HorizontalOptions="Start"
+                       BackgroundColor="{Binding PlaceholderBackgroundColor,Source={x:Reference this}}"
+                       TextColor="{Binding PlaceholderColor, Source={x:Reference this}}"
+                       Text="{Binding Placeholder,Source={x:Reference this}}"
+                       Margin="10,0,0,0"
+                       VerticalOptions="Center">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="TapGestureRecognizer_Tapped"/>
+                    </Label.GestureRecognizers>
+                </Label>
+            </Grid>
+        </StackLayout>
+    </ContentView.Content>
+</ContentView>

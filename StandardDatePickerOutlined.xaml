@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MaxilanaVales.Controles.StandardDatePickerOutlined"
+             xmlns:Controles="clr-namespace:MaxilanaVales.Controles"
+             x:Name="this">
+    <ContentView.Content>
+        <StackLayout>
+            <Grid>
+                <Controles:StandardEntry x:Name="TextBox"
+                                         VerticalOptions="FillAndExpand"
+                                         HeightRequest="40"
+                                         BackgroundColor="{Binding BackgroundColorEntry, Source={x:Reference this}}"
+                                         BorderThickness="{Binding BorderThickness, Source={x:Reference this}}"
+                                         CornerRadius="{Binding CornerRadius, Source={x:Reference this}}"
+                                         BorderColor="{Binding BorderColor, Source={x:Reference this}}"
+                                         IsReadOnly="True">
+
+                </Controles:StandardEntry>
+
+                <Controles:StandardDatePicker x:Name="DatePickerBorder"
+                                              Margin="5,0,0,0"
+                            VerticalOptions="FillAndExpand"
+                            HeightRequest="40"
+                            DateSelected="PickerBorder_DateSelected"
+                            FontFamily="{Binding FontFamily, Source={x:Reference this}}"
+                            FontSize="{Binding FontSize, Source={x:Reference this}}"
+                            TextColor="{Binding TextColor, Source={x:Reference this}}"
+                            BackgroundColor="{Binding BackgroundColorEntry, Source={x:Reference this}}"
+                            IsEnabled="{Binding IsEnabled, Source={x:Reference this}}"
+                            Format="dd/MM/yyyy"
+                            Date="{Binding Date, Source={x:Reference this}}">
+                </Controles:StandardDatePicker>
+
+                <Label x:Name="PlaceHolderLabel"
+                       HorizontalOptions="Start"
+                       BackgroundColor="{Binding PlaceholderBackgroundColor,Source={x:Reference this}}"
+                       TextColor="{Binding PlaceholderColor, Source={x:Reference this}}"
+                       Text="{Binding Placeholder,Source={x:Reference this}}"
+                       Margin="10,0,0,0"
+                       VerticalOptions="Center">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" NumberOfTapsRequired="1"/>
+                    </Label.GestureRecognizers>
+                </Label>
+            </Grid>
+        </StackLayout>
+    </ContentView.Content>
+</ContentView>
